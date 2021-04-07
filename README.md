@@ -1,3 +1,6 @@
+# Note
+## Would like to give all the credit to contributors , I only required to use the version of library from scala 2.12 hence only bumped the version and refactored the testcases
+
 [![Build Status](https://travis-ci.org/sryza/spark-timeseries.svg)](https://travis-ci.org/sryza/spark-timeseries)
 
 Time Series for Spark (The `spark-ts` Package)
