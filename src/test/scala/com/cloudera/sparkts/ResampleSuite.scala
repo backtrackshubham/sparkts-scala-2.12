@@ -15,15 +15,14 @@
 
 package com.cloudera.sparkts
 
-import java.time.{ZonedDateTime, ZoneId}
-
+import java.time.{ZoneId, ZonedDateTime}
 import org.apache.spark.mllib.linalg._
-
 import org.scalatest._
+import org.scalatest.matchers.should.Matchers
 
 import scala.collection.mutable.ArrayBuffer
 
-class ResampleSuite extends FunSuite with ShouldMatchers {
+class ResampleSuite extends FunSuite with Matchers {
   def verify(
       series: String,
       closedRight: Boolean,

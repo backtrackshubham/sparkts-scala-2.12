@@ -16,15 +16,15 @@
 package com.cloudera.sparkts
 
 import scala.Double.NaN
-
 import breeze.linalg._
-
 import com.cloudera.sparkts.DateTimeIndex._
 import com.cloudera.sparkts.TimeSeriesUtils._
-import java.time._
-import org.scalatest.{FunSuite, ShouldMatchers}
+import org.scalatest.matchers.should.Matchers
 
-class RebaseSuite extends FunSuite with ShouldMatchers {
+import java.time._
+import org.scalatest.{FunSuite}
+
+class RebaseSuite extends FunSuite with Matchers {
   private type Rebaser = Vector[Double] => Vector[Double]
   private val Z = ZoneId.of("Z")
 

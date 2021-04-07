@@ -15,9 +15,10 @@
 
 package com.cloudera.sparkts.models
 
-import breeze.linalg.{DenseMatrix => BreezeDenseMatrix, DenseVector => BreezeDenseVector, diag, sum}
+import breeze.linalg.DenseVector._
+import breeze.linalg.{diag, sum, DenseMatrix => BreezeDenseMatrix, DenseVector => BreezeDenseVector}
 import com.cloudera.sparkts.Lag
-import com.cloudera.sparkts.MatrixUtil.{toBreeze, dvBreezeToSpark}
+import com.cloudera.sparkts.MatrixUtil.{dvBreezeToSpark, toBreeze}
 import com.cloudera.sparkts.UnivariateTimeSeries.{differencesOfOrderD, inverseDifferencesOfOrderD}
 import com.cloudera.sparkts.stats.TimeSeriesStatisticalTests.kpsstest
 import org.apache.commons.math3.complex.Complex
@@ -529,7 +530,7 @@ class ARIMAModel(
       i += 1
     }
 
-    gradient := gradient :/ -sigma2
+    gradient := gradient /:/ -sigma2
     gradient.toArray
   }
 
